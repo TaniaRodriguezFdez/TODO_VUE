@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container" id="taskList">
+      <h1 class="app-header">VUE TO DO LIST</h1>
+      <div class="add-task">
+        <input type="text" placeholder="add new task" class="task-input" v-model="tasks.name"@keyup.enter="newItem">
+        <input type="" class="submit-task" title="add task"  @click="newItem"/>
+      </div>
+      <ul class="task-list">
+        <li class="task-list-item" v-for="task in tasks">
+                <label class="task-list-item-label">
+                        <input type="checkbox">
+                        <span>{{task.name }}</span>
+                </label>
+                <span class="delete-btn" title="Delete Task" @click="delItem(task)">{{task.del}}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="main.js"></script>
+</html>
